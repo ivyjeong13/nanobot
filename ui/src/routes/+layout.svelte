@@ -14,6 +14,10 @@
 	import { Menu, X, SidebarOpen, SidebarClose, Sun, Moon, SquarePen } from '@lucide/svelte';
 	import type { Chat } from '$lib/types';
 	import { resolve } from '$app/paths';
+	import { PUBLIC_DEFAULT_LIGHT_THEME, PUBLIC_DEFAULT_DARK_THEME } from '$env/static/public';
+
+	const defaultLightTheme = PUBLIC_DEFAULT_LIGHT_THEME || 'brightobot';
+	const defaultDarkTheme = PUBLIC_DEFAULT_DARK_THEME || 'darkobot';
 
 	let { children } = $props();
 
@@ -21,7 +25,7 @@
 	let isLoading = $state(true);
 	let isSidebarCollapsed = $state(false);
 	let isMobileSidebarOpen = $state(false);
-	let currentTheme = $state('lofi');
+	let currentTheme = $state(defaultLightTheme);
 	let workspaceSupported = $state(false);
 	const root = resolve('/');
 	const newThread = resolve('/');
@@ -42,12 +46,12 @@
 		// Load theme from localStorage or detect system preference
 		if (browser) {
 			const savedTheme = localStorage.getItem('theme');
-			if (savedTheme) {
+			if (savedTheme && (savedTheme === defaultLightTheme || savedTheme === defaultDarkTheme)) {
 				currentTheme = savedTheme;
 			} else {
 				// Default to system preference
 				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-				currentTheme = prefersDark ? 'black' : 'lofi';
+				currentTheme = prefersDark ? defaultDarkTheme : defaultLightTheme;
 			}
 			// Set theme on document
 			document.documentElement.setAttribute('data-theme', currentTheme);
@@ -105,7 +109,7 @@
 
 	function toggleTheme() {
 		if (browser) {
-			currentTheme = currentTheme === 'lofi' ? 'black' : 'lofi';
+			currentTheme = currentTheme === defaultLightTheme ? defaultDarkTheme : defaultLightTheme;
 			document.documentElement.setAttribute('data-theme', currentTheme);
 			localStorage.setItem('theme', currentTheme);
 		}
@@ -198,7 +202,7 @@
 					class="btn btn-circle border-base-300 bg-base-100 shadow-lg btn-sm"
 					aria-label="Toggle theme"
 				>
-					{#if currentTheme === 'lofi'}
+					{#if currentTheme === defaultLightTheme}
 						<Moon class="h-4 w-4" />
 					{:else}
 						<Sun class="h-4 w-4" />

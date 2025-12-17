@@ -2,9 +2,158 @@
 @import 'highlight.js/styles/atom-one-dark.css';
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-	themes:
-		lofi --default,
-		black --prefersdark;
+	themes: brightobot --default, darkobot --prefersdark;
+  }
+@plugin "daisyui/theme" {
+	name: "brightobot";
+	default: true;
+	prefersdark: false;
+	color-scheme: "light";
+	/* --color-base-100: oklch(95% 0.052 163.051); */
+	--color-base-100: hsl(0 0 100);
+	--color-base-200: hsl(0 0 95.5);
+	--color-base-300: hsl(0 0 92.5);
+	--color-base-content: hsl(0 0 0);
+	--color-primary: #4f7ef3;
+	--color-primary-content: hsl(0 0 100);
+	--color-secondary: hsl(0 0 82.5);
+	--color-secondary-content: hsl(0 0 0);
+	--color-accent: #95bcfb;
+	--color-accent-content: hsl(0 0 0);
+	--color-secondary: hsl(0 0 82.5);
+	--color-secondary-content: hsl(0 0 0);
+	--color-info: #4f7ef3;
+	--color-info-content: hsl(0 0 100);
+	--color-success: oklch(72.3% 0.219 149.579);
+	--color-success-content: hsl(0 0 0);
+	--color-warning: oklch(79.5% 0.184 86.047);
+	--color-warning-content: hsl(0 0 100);
+	--color-error: #ef4444;
+	--color-error-content: hsl(0 0 100);
+	--radius-selector: 0.5rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 1;
+  }
+
+  @plugin "daisyui/theme" {
+	name: "darkobot";
+	default: false;
+	prefersdark: true;
+	color-scheme: "dark";
+	--color-base-100: ;
+	--color-base-100: hsl(0 0 0);
+	/* --color-base-100: oklch(28% 0.091 267.935); */
+	--color-base-200: hsl(0 0 5.5);
+	--color-base-300: hsl(0 0 12.5);
+	--color-base-content: hsl(0 0 97.5);
+	--color-primary: #4f7ef3;
+	--color-primary-content: hsl(0 0 97.5);
+	--color-secondary: hsl(0 0 22.5);
+	--color-secondary-content: hsl(0 0 97.5);
+	--color-accent: #203188;
+	--color-accent-content: hsl(0 0 97.5);
+	--color-neutral: hsl(0 0 22.5);
+	--color-neutral-content: hsl(0 0 97.5);
+	--color-info: #4f7ef3;
+	--color-info-content: hsl(0 0 97.5);
+	--color-success: oklch(72.3% 0.219 149.579);
+	--color-success-content: hsl(0 0 97.5);
+	--color-warning: oklch(79.5% 0.184 86.047);
+	--color-warning-content: hsl(0 0 97.5);
+	--color-error: #ef4444;
+	--color-error-content: hsl(0 0 97.5);
+	--radius-selector: 0.5rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 1;
+  }  
+
+  @plugin "daisyui/theme" {
+	name: "brightnanobot";
+	default: true;
+	prefersdark: false;
+	color-scheme: "light";
+	/* --color-base-100: oklch(97% 0.013 17.38); */
+	--color-base-100: hsl(0 0 100);
+	--color-base-200: hsl(0 0 95.5);
+	--color-base-300: hsl(0 0 92.5);
+	--color-base-content: hsl(0 0 0);
+	--color-primary: #ef4444;
+	--color-primary-content: hsl(0 0 97.5);
+	--color-secondary: hsl(0 0 82.5);
+	--color-secondary-content: hsl(0 0 0);
+	--color-accent: #991b1b;
+	--color-accent-content: hsl(0 0 97.5);
+	--color-neutral: hsl(0 0 5.5);
+	--color-neutral-content: hsl(0 0 100);
+	--color-info: #ef4444;
+	--color-info-content: hsl(0 0 97.5);
+	--color-success: oklch(72.3% 0.219 149.579);
+	--color-success-content: hsl(0 0 0);
+	--color-warning: oklch(79.5% 0.184 86.047);
+	--color-warning-content: hsl(0 0 100);
+	--color-error: #fca5a5;
+	--color-error-content: hsl(0 0 0);
+	--radius-selector: 0.5rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 1;
+  }
+
+  @plugin "daisyui/theme" {
+	name: "darknanobot";
+	default: false;
+	prefersdark: true;
+	color-scheme: "dark";
+	/* --color-base-100: oklch(39% 0.141 25.723); */
+	--color-base-100: hsl(0 0 0);
+	--color-base-200: hsl(0 0 5.5);
+	--color-base-300: hsl(0 0 12.5);
+	--color-base-content: hsl(0 0 97.5);
+	--color-primary: #ef4444;
+	--color-primary-content: hsl(0 0 97.5);
+	--color-secondary: hsl(0 0 22.5);
+	--color-secondary-content: hsl(0 0 97.5);
+	--color-accent: #991b1b;
+	--color-accent-content: hsl(0 0 97.5);
+	--color-neutral: hsl(0 0 22.5);
+	--color-neutral-content: hsl(0 0 97.5);
+	--color-info: #ef4444;
+	--color-info-content: hsl(0 0 97.5);
+	--color-success: oklch(72.3% 0.219 149.579);
+	--color-success-content: hsl(0 0 97.5);
+	--color-warning: oklch(79.5% 0.184 86.047);
+	--color-warning-content: hsl(0 0 97.5);
+	--color-error: #fca5a5;
+	--color-error-content: hsl(0 0 0);
+	--radius-selector: 0.5rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 1;
+  }
+  
+.prose {
+	:root & {
+		/* have prose match with highlight.js background color */
+		--tw-prose-pre-bg: #282c34;
+	}
 }
 
 /* Enhanced code block styling */

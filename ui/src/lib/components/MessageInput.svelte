@@ -167,7 +167,7 @@
 
 	<form onsubmit={handleSubmit}>
 		<div
-			class="space-y-3 rounded-t-2xl border-2 border-base-200 bg-base-100 p-3 transition-colors focus-within:border-primary md:rounded-2xl"
+			class="space-y-3 rounded-t-box border-2 border-base-200 bg-base-200 p-3 transition-colors focus-within:border-primary md:rounded-box"
 		>
 			<!-- Top row: Full-width input -->
 			<textarea
@@ -175,7 +175,7 @@
 				onkeydown={handleKeydown}
 				oninput={autoResize}
 				{placeholder}
-				class="max-h-32 min-h-[2.5rem] w-full resize-none bg-transparent p-1 text-sm leading-6 outline-none placeholder:text-base-content/50"
+				class="max-h-32 min-h-[2.5rem] w-full resize-none p-1 text-sm leading-6 outline-none placeholder:text-base-content/50"
 				rows="1"
 				bind:this={textareaRef}
 			></textarea>
