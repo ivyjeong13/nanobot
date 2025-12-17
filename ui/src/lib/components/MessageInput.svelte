@@ -167,7 +167,11 @@
 
 	<form onsubmit={handleSubmit}>
 		<div
+			role="presentation"
 			class="space-y-3 rounded-t-box border-2 border-base-200 bg-base-200 p-3 transition-colors focus-within:border-primary md:rounded-box"
+			onclick={() => {
+				textareaRef?.focus();
+			}}
 		>
 			<!-- Top row: Full-width input -->
 			<textarea
